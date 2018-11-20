@@ -19,7 +19,7 @@ RUN apt-get update \
         zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-install -j"$(nproc)" intl pdo_mysql zip
+RUN docker-php-ext-install -j"$(nproc)" intl pdo_mysql zip sockets
 
 RUN useradd docker -u 1000
 

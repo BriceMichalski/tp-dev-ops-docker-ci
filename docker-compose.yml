@@ -20,17 +20,23 @@ services:
       - './:/app'
       - './docker/php/fpm.conf:/usr/local/etc/php-fpm.conf:ro'
       - './docker/php/php.ini:/usr/local/etc/php/php.ini:ro'
+    networks:
+      - default
+      - monitoring-net
 
   # MYSQL service
   mysql:
     image: mysql:5.7
-
     environment:
       - MYSQL_DATABASE=symfony
       - MYSQL_ROOT_PASSWORD=
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
     volumes:
       - 'db:/var/lib/mysql'
+
+networks:
+  monitoring-net:
+    driver: bridge
 
 volumes:
   # DB save

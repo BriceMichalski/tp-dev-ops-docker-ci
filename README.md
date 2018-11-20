@@ -1,10 +1,11 @@
-Dockerize symfony/website-skeleton
+TP symfony / 
 ===================
 
 Prerequisites :
 ------------
 - install docker-ce
 - install docker-compose
+- install composer
 
 
 Used docker images
@@ -20,6 +21,7 @@ From project path run the following command:
 ```
 $  docker-compose pull
 $  make .env
+$  composer install --no-scripts
 ```
 Once done edit .env with your custom variables
 
