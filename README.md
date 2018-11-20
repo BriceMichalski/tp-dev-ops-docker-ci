@@ -1,18 +1,20 @@
-TP symfony / 
+TP-docker-symfony-ci  
 ===================
 
-Prerequisites :
+Prerequisites
 ------------
 - install docker-ce
 - install docker-compose
-- install composer
-
 
 Used docker images
 ------------
 - nginx:1.15.5-alpine
 - custom php ( based on php:7.2.11-fpm ) (cf /docker/php/Dockerfile)
 - mysql:5.7
+
+Dependency
+------------
+- tp-devops-docker-monitoring ( cf https://github.com/BriceMichalski/tp-devops-docker-monitoring )
 
 
 Install
@@ -21,7 +23,8 @@ From project path run the following command:
 ```
 $  docker-compose pull
 $  make .env
-$  composer install --no-scripts
+$  docker pull composer/composer
+$  docker run --rm -v $(pwd):/app composer/composer install
 ```
 Once done edit .env with your custom variables
 
@@ -37,5 +40,3 @@ Stop
 ```
 $  make stop
 ```
-
-

@@ -9,7 +9,10 @@ services:
       - './:/app'
     ports:
       - '8081:80'
-
+    networks:
+      - default
+      - monitoring-net
+      
   # PHP-FPM service
   php:
     build:
