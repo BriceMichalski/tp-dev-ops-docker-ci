@@ -1,5 +1,11 @@
-TP-docker-symfony-ci  
+TP-devops-docker-symfony-ci  
 ===================
+
+Practical school work for the implementation of a dockerize symfony stack using php-fpm , mysql and nginx.
+
+Implementation of Continuous integration with travis-ci.
+
+Implementation of Symfony and Nginx Syslog message transmission on UDP.
 
 Prerequisites
 ------------
@@ -40,3 +46,12 @@ Stop
 ```
 $  make stop
 ```
+
+Useful links
+------------
+- nginx : https://nginx.org/en/docs/
+- mysql : https://dev.mysql.com/doc/refman/5.7/en/
+- php-fpm: http://php.net/manual/en/install.fpm.php
+- syslog protocole : https://tools.ietf.org/html/rfc5424#section-6.2.3.1
+- monolog Handler : https://github.com/Seldaek/monolog/tree/master/src/Monolog/Handler
+- monolog configuration : https://github.com/symfony/monolog-bundle/blob/master/DependencyInjection/Configuration.php
