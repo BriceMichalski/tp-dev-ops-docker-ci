@@ -14,6 +14,11 @@ class DefaultController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function indexAction(){
-        return $this->render('base.html.twig');
+
+        $date = date('Y-m-d\TH:i:s.v\Z');
+
+        return $this->render('base.html.twig',array(
+            'date' => $date
+        ));
     }
 }
